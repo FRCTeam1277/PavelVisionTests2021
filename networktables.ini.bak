@@ -1,0 +1,5 @@
+[NetworkTables Storage 3.0]
+string "/Preferences/.type"="RobotPreferences"
+boolean "/Preferences/l"=true
+double "/Preferences/radius"=20
+double "/Preferences/time"=5
