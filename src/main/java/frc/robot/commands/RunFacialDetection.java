@@ -18,11 +18,11 @@ public class RunFacialDetection extends ParallelCommandGroup {
      * @param <R> Any command that implements the IStreamInput (with type Rect[])
      * @param commands array of R-worthy commands
      */
-    public <R extends IStreamInput<Rect[]> & Command> RunFacialDetection(@Nonnull RecognizeFace recognizeFaceCommand, R... commands) {
+    public <R extends IStreamInput<Integer> & Command> RunFacialDetection(@Nonnull RecognizeFace recognizeFaceCommand, R... commands) {
 
-        StreamData<Rect[]> faceRects = new StreamData<>();
-        recognizeFaceCommand.setOutputStream(new OutputDataStream<>(faceRects));
-        for(IStreamInput<Rect[]> a : commands) {
+        StreamData<Integer> faceRects = new StreamData<>();
+        recognizeFaceCommand.setOutputStream(new OutputDataStream<Integer>(faceRects));
+        for(IStreamInput<Integer> a : commands) {
             a.setInputStream(new InputDataStream<>(faceRects)); //sets inputstream for all commands
         }
         addCommands(recognizeFaceCommand);
