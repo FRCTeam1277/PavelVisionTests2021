@@ -15,7 +15,7 @@ public class RunFacialDetection extends ParallelCommandGroup {
 
     /**
      * @param recognizeFaceCommand = outputStream (command that writes data)
-     * @param <R> Any command that implements the IStreamInput (with type Rect[])
+     * @param <R> Any command that implements the IStreamInput (with type Integer)
      * @param commands array of R-worthy commands
      */
     public <R extends IStreamInput<Integer> & Command> RunFacialDetection(@Nonnull RecognizeFace recognizeFaceCommand, R... commands) {
